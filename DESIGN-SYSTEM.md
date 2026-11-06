@@ -1,46 +1,44 @@
 # Design System — CollabKit
 
 ## 1. Design Philosophy
-CollabKit utilizes a crisp, modern, editorial aesthetic tailored for creator productivity and brand trust. The interface balances high data density on the private dashboard with approachable, engaging storytelling on the public discovery surfaces. 
-
-Visual hierarchy is maintained through distinct status colors, clear separation between public and private views using prominent color-coded badges, and clean component containment.
+CollabKit uses a clean, modern, editorial aesthetic tailored for creator productivity and brand trust. The interface balances high data density on the private dashboard with approachable, engaging discovery on public marketplace surfaces.
 
 ---
 
 ## 2. Color Palette
 
 ### Base & Neutral Colors
-- **Page Background (`--bg`):** `#F8FAFC` (Slate 50) — clean, minimal canvas.
-- **Card Background (`--card`):** `#FFFFFF` (Pure White) — high contrast content surface.
-- **Border Neutral (`--border`):** `#E2E8F0` (Slate 200) — subtle framing lines.
-- **Border Strong (`--border-strong`):** `#CBD5E1` (Slate 300) — active inputs and interactive hover states.
-- **Text Primary (`--text-primary`):** `#0F172A` (Slate 900) — high contrast, ultra-legible headers and primary text.
-- **Text Secondary (`--text-secondary`):** `#64748B` (Slate 500) — metadata, labels, and helper descriptions.
-- **Text Faint (`--text-faint`):** `#94A3B8` (Slate 400) — placeholders and inactive timestamps.
+- **Page Background (`--bg`):** `#F8FAFC` (Slate 50) — clean, minimal canvas
+- **Card Background (`--card`):** `#FFFFFF` (Pure White) — high-contrast content surface
+- **Border Neutral (`--border`):** `#E2E8F0` (Slate 200) — subtle framing lines
+- **Border Strong (`--border-strong`):** `#CBD5E1` (Slate 300) — active inputs and hover states
+- **Text Primary (`--text-primary`):** `#0F172A` (Slate 900) — high contrast, ultra-legible headers and primary text
+- **Text Secondary (`--text-secondary`):** `#64748B` (Slate 500) — metadata, labels, and helper descriptions
+- **Text Faint (`--text-faint`):** `#94A3B8` (Slate 400) — placeholders and inactive timestamps
 
 ### Brand & Interactive Colors
-- **Primary Accent / Button (`--accent-primary`):** `#0F172A` (Solid Slate Black) with `#FFFFFF` text.
-- **Interactive Hover (`--accent-hover`):** `#1E293B` (Slate 800).
-- **Secondary Action (`--accent-secondary`):** `#2563EB` (Blue 600) — subtle links and secondary highlights.
+- **Primary Accent / Button (`--accent-primary`):** `#0F172A` (Solid Slate Black) with `#FFFFFF` text
+- **Interactive Hover (`--accent-hover`):** `#1E293B` (Slate 800)
+- **Secondary Action (`--accent-secondary`):** `#2563EB` (Blue 600) — subtle links and secondary highlights
 
 ### Status & Privacy Tag System
-- **PRIVATE Badge Background:** `#FEF3C7` (Amber 100).
-- **PRIVATE Badge Text / Border:** `#92400E` (Amber 800) / `#FDE68A`.
+- **PRIVATE Badge Background:** `#FEF3C7` (Amber 100)
+- **PRIVATE Badge Text / Border:** `#92400E` (Amber 800) / `#FDE68A`
   *Denotes sensitive creator-only data (pipeline revenue, active pitches, internal notes).*
-- **PUBLIC Badge Background:** `#DCFCE7` (Emerald 100).
+- **PUBLIC Badge Background:** `#DCFCE7` (Emerald 100)
   *Denotes open marketplace items (public creator profiles, brand collab requests).*
-- **PUBLIC Badge Text / Border:** `#166534` (Emerald 800) / `#BBF7D0`.
-- **Success / Paid State:** `#16A34A` (Emerald 600) / Background `#F0FDF4`.
-- **Warning / Editing State:** `#D97706` (Amber 600) / Background `#FFFBEB`.
-- **Info / Pitched State:** `#2563EB` (Blue 600) / Background `#EFF6FF`.
-- **Published State:** `#9333EA` (Purple 600) / Background `#FAF5FF`.
+- **PUBLIC Badge Text / Border:** `#166534` (Emerald 800) / `#BBF7D0`
+- **Success / Paid State:** `#16A34A` (Emerald 600) / Background `#F0FDF4`
+- **Warning / Editing State:** `#D97706` (Amber 600) / Background `#FFFBEB`
+- **Info / Pitched State:** `#2563EB` (Blue 600) / Background `#EFF6FF`
+- **Published State:** `#9333EA` (Purple 600) / Background `#FAF5FF`
 
 ---
 
 ## 3. Typography
 
 ### Font Family
-- **Primary:** `Inter`, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif.
+- **Primary:** `Inter`, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
 
 ### Type Scale & Hierarchy
 | Token | Font Size | Font Weight | Line Height | Usage |
@@ -58,7 +56,7 @@ Visual hierarchy is maintained through distinct status colors, clear separation 
 ## 4. Reusable UI Components
 
 1. **`Navbar` (`components/Navbar.js` & `Navbar.module.css`):**
-   - Fixed/sticky top navigation bar with brand logo, CollabKit mark, primary navigation links (`Public Home`, `Find Creators`, `Brand Requests`), and direct link to the `Private Dashboard` with badge.
+   - Sticky top navigation bar with brand logo, CollabKit mark, primary navigation links (`Public Home`, `Find Creators`, `Brand Requests`), and direct link to the `Private Dashboard` with badge.
 
 2. **`Button` (`components/Button.js` & `Button.module.css`):**
    - Variants: `primary` (Solid dark `#0F172A`), `secondary` (White with border), `outline` (transparent with border), `danger`, `small` (compact size for card actions).
