@@ -1,0 +1,147 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #E2E8F0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.04em;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.1;
+}
+
+.brandTag {
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748B;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.navLink:hover {
+  color: #0F172A;
+  background-color: #F8FAFC;
+}
+
+.navLink.active {
+  color: #0F172A;
+  background-color: #F1F5F9;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shareBtn {
+  font-size: 12px;
+}
+
+.dashboardLink {
+  text-decoration: none;
+}
+
+.dashboardBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.dashboardBtn:hover {
+  background-color: #1E293B;
+}
+
+.dashboardActive {
+  box-shadow: 0 0 0 2px #FEF3C7;
+}
+
+.privateTag {
+  font-size: 9px;
+  padding: 1px 5px;
+}
+
+@media (max-width: 768px) {
+  .brandTag {
+    display: none;
+  }
+  .nav {
+    gap: 2px;
+  }
+  .navLink {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .shareBtn {
+    display: none;
+  }
+}

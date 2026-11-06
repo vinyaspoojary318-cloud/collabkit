@@ -1,0 +1,34 @@
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.pad_none {
+  padding: 0;
+}
+
+.pad_sm {
+  padding: 12px;
+}
+
+.pad_md {
+  padding: 18px;
+}
+
+.pad_lg {
+  padding: 24px;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
