@@ -1,135 +1,159 @@
-# CollabKit — Sponsor & Deal CRM for Indian Video Editors & Creators
+# CollabKit
 
-> **Milestone 1 — Graded Project (25 Marks)**  
-> **Team:** 2–3 Students  
-> **Tech Stack:** Next.js 14.2.5 (App Router), React 18.3.1, JavaScript, CSS Modules only (NO Tailwind)  
-> **Inspiration:** Passionfroot (YC W21) + Product Hunt Discovery Dynamics  
+<p align="center">
+  <strong>The all-in-one Sponsor CRM & Collab Marketplace built for video editors, shorts creators, and brands.</strong>
+</p>
 
----
-
-## 1. Problem Statement & Solution
-
-### The Problem
-Indian independent video editors and short-form creators (10k–150k followers across Mangalore, Bangalore, Mysore) currently manage sponsorships and brand collaborations across WhatsApp chats, Instagram DMs, and untracked spreadsheets. They constantly miss payment follow-ups, forget who has paid vs who is pending, and struggle to manage production deadlines. At the same time, regional brands, college fests (e.g., Campus Fest MIT), and local startups don't know where to find vetted creators with clear ₹ pricing under ₹15,000.
-
-### The Solution: CollabKit
-CollabKit provides a dual-surface solution:
-1. **PRIVATE Side (Creator Workspace):**
-   - **My Private Dashboard (`/dashboard`):** Visible only to the creator (marked with `PRIVATE` yellow badge).
-   - **Kanban Deal Pipeline:** `Pitched` → `Editing` → `Published` → `Paid`.
-   - **Dynamic ₹ Earnings:** Automatic recalculation of Total Pipeline, Active Pending, and Paid earnings.
-   - **Collab Management:** Add deals, track revisions (`1/2 revs`), due warnings, and invoice references.
-2. **PUBLIC Side (Public Discovery & Collab Bulletin):**
-   - **Public Home (`/`):** Hero landing, featured creator profiles, recent brand requests, and direct inbound collaboration request form.
-   - **Marketplace (`/marketplace`):** Search and filter creators by niche (Tech, Beauty, Fitness, Finance, Food) and city with starting rates in ₹.
-   - **Brand Requests (`/requests`):** Public bulletin where brands post collaboration requirements (e.g., Campus Fest MIT, Cafe Udupi, Startup Bangalore), and creators apply directly.
+<p align="center">
+  <a href="#key-features">Features</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#design-system">Design System</a> •
+  <a href="#roadmap">Roadmap</a>
+</p>
 
 ---
 
-## 2. Quick Start & Local Run
+## Overview
 
-Ensure **Node.js (v18.x or newer)** and **npm** are installed.
+Independent video editors and creators frequently manage sponsorships across fragmented channels—WhatsApp chats, Instagram DMs, and manual spreadsheets. Deals fall through the cracks, delivery deadlines are missed, and invoice tracking in Indian Rupees (₹) remains disorganized. Meanwhile, consumer brands, agencies, and campus organizers lack a frictionless directory to discover regional video creators with transparent rates.
 
-```bash
-# 1. Install dependencies
-npm install
+**CollabKit** solves this with a unified dual-surface platform:
+1. **Private Creator Workspace (`/dashboard`):** An intuitive CRM pipeline (`Pitched` → `Editing` → `Published` → `Paid`) with live revenue analytics, revision counters, and one-click deal status progression.
+2. **Public Discovery Marketplace (`/marketplace` & `/requests`):** An open directory where brands filter creators by niche and city, while creators can browse and pitch public brand briefs directly without cold email spam.
 
-# 2. Run local development server
-npm run dev
+---
 
-# 3. Open in browser
-# Navigate to: http://localhost:3000
+## Key Features
+
+### 🔒 Private Creator CRM
+- **4-Stage Kanban Pipeline:** Track deals seamlessly through `Pitched`, `Editing`, `Published`, and `Paid`.
+- **Automated Earnings Engine:** Instant recalculation of Total Pipeline value, Active Pending work, and Cleared Earnings in Indian Rupees (₹).
+- **Revision & Deadline Alerts:** Monitor deliverables with turn-around tags (`Today`, `2d`, `1d`) and revision ceilings (e.g., `1/2 revs`).
+- **One-Click Shareable Profile:** Instant link generation for Instagram bios, media kits, and WhatsApp pitches.
+
+### 🌐 Public Discovery & Brand Bulletin
+- **Creator Directory (`/marketplace`):** Filter verified editors and creators across Tech, Beauty, Fitness, Finance, and Food in major regional creator hubs (Mangalore, Bangalore, Mysore, Mumbai).
+- **Public Brand Requests (`/requests`):** Open bulletin board where brands, college festivals, and startups post immediate creator needs with clear budgets.
+- **Instant Inbound Briefs:** Public-facing collaboration request modal feeding inbound leads straight into the creator's private pipeline.
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Description |
+| :--- | :--- | :--- |
+| **Framework** | [Next.js 14](https://nextjs.org/) | App Router architecture with optimized static generation |
+| **UI Library** | [React 18](https://react.dev/) | Functional components and hooks |
+| **Styling** | CSS Modules | Scoped component styling with zero runtime CSS-in-JS overhead |
+| **State Management** | React Context API | Reactive global state with browser `localStorage` persistence |
+| **Typography** | Inter | Clean, modern typography via Google Fonts |
+
+---
+
+## Project Structure
+
+```
+collabkit/
+├── app/
+│   ├── layout.js              # Root layout with Inter font and metadata
+│   ├── globals.css            # Global CSS custom properties and toast styles
+│   ├── ClientLayout.js        # Global context provider and notification wrapper
+│   ├── page.js                # Public Landing & Showcase
+│   ├── marketplace/
+│   │   └── page.js            # Creator Directory with multi-niche filtering
+│   ├── requests/
+│   │   └── page.js            # Public Brand Request Bulletin & Post Modal
+│   └── dashboard/
+│       └── page.js            # Private Kanban CRM & Earnings Workspace
+├── components/
+│   ├── Navbar.js              # Sticky header with public links and private badge
+│   ├── Button.js              # Reusable button with primary, secondary & outline variants
+│   ├── Card.js                # Standard elevated card surface
+│   ├── Input.js               # Standard text, textarea, and select inputs
+│   ├── Modal.js               # Accessible backdrop modal dialog
+│   ├── Badge.js               # Privacy and deal stage status chips
+│   ├── StatCard.js            # KPI metric cards with trend indicators
+│   ├── DealCard.js            # Interactive Kanban deal card with fast-forward actions
+│   ├── CreatorCard.js         # Public creator profile card with rate card in ₹
+│   └── RequestCard.js         # Brand request item card with direct Apply trigger
+├── context/
+│   └── DealContext.js         # Global deals, requests, and calculation state engine
+├── data/
+│   └── dummyData.js           # Production-ready realistic mock dataset
+├── PRODUCT-ASSUMPTIONS.md     # Product discovery and requirements specification
+├── DESIGN-SYSTEM.md           # Visual design tokens and component guidelines
+└── WIREFRAME.md               # User flow diagrams and UI layout specs
 ```
 
-### Production Build
+---
+
+## Quick Start
+
+### Prerequisites
+- **Node.js**: `18.x` or later
+- **npm**: `9.x` or later
+
+### Installation
+
 ```bash
+# 1. Clone the repository
+git clone https://github.com/vinyaspoojary318-cloud/collabkit.git
+
+# 2. Navigate to project root
+cd collabkit
+
+# 3. Install dependencies
+npm install
+
+# 4. Start local development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to explore the platform.
+
+### Production Build
+
+```bash
+# Compile and optimize for production
 npm run build
+
+# Start production server
 npm run start
 ```
 
 ---
 
-## 3. Project Structure
+## Design System
 
-```
-collabkit/
-├── app/
-│   ├── layout.js              # Root layout with font Inter & metadata
-│   ├── globals.css            # Global CSS variables, reset, toast notification
-│   ├── ClientLayout.js        # DealProvider & global toast client wrapper
-│   ├── page.js                # Page 1: Public Home (Landing & Inbound Collab Form)
-│   ├── page.module.css
-│   ├── marketplace/
-│   │   ├── page.js            # Page 2: Find Creators (Marketplace & Niche Filters)
-│   │   └── page.module.css
-│   ├── requests/
-│   │   ├── page.js            # Page 3: Brand Requests Bulletin & Post Request Modal
-│   │   └── page.module.css
-│   └── dashboard/
-│       ├── page.js            # Page 4: My Private Dashboard (Kanban, Stats, Deals Table)
-│       └── page.module.css
-├── components/
-│   ├── Navbar.js & .module.css       # Top navigation bar with Public & Private links
-│   ├── Button.js & .module.css       # Reusable button with primary, secondary, outline variants
-│   ├── Card.js & .module.css         # Standardized elevated card surface
-│   ├── Input.js & .module.css        # Reusable input, textarea, and select components
-│   ├── Modal.js & .module.css        # Accessible dialog overlay for forms
-│   ├── Badge.js & .module.css        # PRIVATE (Yellow), PUBLIC (Green), and stage badges
-│   ├── StatCard.js & .module.css     # KPI metric block with trend indicators in ₹
-│   ├── DealCard.js & .module.css     # Kanban deal card with status progression action
-│   ├── CreatorCard.js & .module.css  # Public creator profile card with rate in ₹
-│   └── RequestCard.js & .module.css  # Public brand request card with Apply action
-├── context/
-│   └── DealContext.js         # React Context (createContext, Provider, useContext) + localStorage
-├── data/
-│   └── dummyData.js           # Realistic dataset of Indian brands, deals, creators, & requests
-├── PRODUCT-ASSUMPTIONS.md     # Product & Problem, Target Users, Scope & Exclusions
-├── DESIGN-SYSTEM.md           # Colors, Typography, Reusable Component Specifications
-├── WIREFRAME.md               # User flows and ASCII wireframes for all 4 pages
-├── package.json
-└── README.md
-```
+CollabKit adheres to an accessible, high-contrast design system optimized for creator workflows:
+
+- **Surface Neutral:** `#F8FAFC` (Slate 50)
+- **Elevated Card:** `#FFFFFF` (Pure White)
+- **Border:** `#E2E8F0` (Slate 200)
+- **Text Primary:** `#0F172A` (Slate 900)
+- **Text Secondary:** `#64748B` (Slate 500)
+- **Primary Accent:** `#0F172A` (Solid Slate)
+- **`PRIVATE` Tag:** `#FEF3C7` (Amber 100) with `#92400E` text
+- **`PUBLIC` Tag:** `#DCFCE7` (Emerald 100) with `#166534` text
+
+Detailed typography specifications and layout tokens can be found in [`DESIGN-SYSTEM.md`](./DESIGN-SYSTEM.md).
 
 ---
 
-## 4. GitHub Issues & Team Task Division
+## Roadmap
 
-| Issue # | Title | Assignee | Status | Description |
-| :--- | :--- | :--- | :---: | :--- |
-| **#1** | `Setup Next.js 14 App Router & Design System` | Member 1 |  Done | Project scaffolding, CSS variables, `DESIGN-SYSTEM.md`, layout, Inter typography |
-| **#2** | `React Context & Dummy Data with LocalStorage` | Member 2 |  Done | `DealContext.js`, `dummyData.js`, state calculations (Total, Pending, Paid in ₹), persistence |
-| **#3** | `Reusable UI Components with CSS Modules` | Member 1 |  Done | `Navbar`, `Button`, `Card`, `Input`, `Modal`, `Badge`, `StatCard`, `DealCard`, `CreatorCard`, `RequestCard` |
-| **#4** | `Private Creator Dashboard & Kanban CRM` | Member 2 |  Done | `/dashboard` page, Kanban stages (`Pitched` → `Editing` → `Published` → `Paid`), deal actions |
-| **#5** | `Public Marketplace & Brand Request Board` | Member 1 |  Done | `/marketplace` niche filter, `/requests` public bulletin, post request modal, `/` landing |
-| **#6** | `Product Assumptions, Wireframes & Vercel Prep` | Member 2 |  Done | `PRODUCT-ASSUMPTIONS.md`, `WIREFRAME.md`, README documentation, production build verification |
-
----
-
-## 5. Design System Summary
-
-- **Background:** `#F8FAFC`
-- **Card Background:** `#FFFFFF`
-- **Border:** `#E2E8F0`
-- **Text Primary:** `#0F172A`
-- **Text Secondary:** `#64748B`
-- **Primary Button:** `#0F172A`
-- **PRIVATE Badge:** Background `#FEF3C7`, Text `#92400E`
-- **PUBLIC Badge:** Background `#DCFCE7`, Text `#166534`
-- **Typography:** `Inter` (H1 32px 800, H2 20px 700, Body 13px 400, Tag 10px 700)
-- **Styling:** CSS Modules only (`.module.css`), No Tailwind.
+- [x] Next.js 14 App Router migration with CSS Modules
+- [x] Client-side state persistence with `localStorage`
+- [x] Interactive Kanban pipeline with dynamic ₹ metrics
+- [x] Public Marketplace and Brand Request Board
+- [ ] OAuth integration (Google & YouTube Creator Studio)
+- [ ] Automated GST-compliant PDF invoice generation
+- [ ] Razorpay webhook payment reconciliation
+- [ ] Direct WhatsApp notification integration for delivery deadlines
 
 ---
 
-## 6. Milestone 1 Deliverables Checklist
+## License
 
-- [x] **Product Idea Selected:** CollabKit (Inspired by Passionfroot YC W21)
-- [x] **`PRODUCT-ASSUMPTIONS.md`:** Comprehensive, non-AI written problem, target users, assumptions, and scope
-- [x] **`WIREFRAME.md`:** Detailed visual flows and page wireframes
-- [x] **`DESIGN-SYSTEM.md`:** Complete palette, typography, and component specifications
-- [x] **GitHub Planning:** Documented issues (#1 to #6) and team task division
-- [x] **Next.js 14 App Router:** Clean, modular structure using JavaScript
-- [x] **Pages:** `/` (Home), `/marketplace` (Creators), `/requests` (Requests), `/dashboard` (Private CRM)
-- [x] **Reusable Components:** 10 modular components with independent `.module.css` files
-- [x] **React Context:** `DealContext.js` managing live deals, requests, dynamic ₹ calculations, and `localStorage`
-- [x] **Dummy Data:** Realistic Indian brands (`boAt`, `Mamaearth`, `OnePlus`, `Noise`, `Lenskart`, `MIT Fest Team`, `Cafe Udupi`)
-- [x] **Working MVP:** Verified local build with interactive status updates and shareable link
+Distributed under the MIT License. See `LICENSE` for more information.
