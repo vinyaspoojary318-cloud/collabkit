@@ -8,7 +8,7 @@
 
 **Live Demo:** [https://collabkit.vercel.app](https://collabkit.vercel.app)  
 **Video:** [Watch Presentation Video](#)  
-**Team:** 2 Members
+**Team:** 3 Members
 
 ---
 
@@ -205,11 +205,12 @@ npm run start
 
 | Member | Work Distributed |
 | :--- | :--- |
-| **Member 1 — Vinyas Poojary** (`vinyaspoojary318-cloud`) | Private Dashboard, React Context, Deal Logic, Pipeline calculations in ₹, README |
-| **Member 2 — Hassan Ifaan** (`ifaanofficial`) | Public Home, Find Creators Marketplace, Brand Requests Board, Design System |
+| **Member 1 — Vinyas Poojary** (`vinyaspoojary318-cloud`) | Private Dashboard, React Context, Deal Logic, Pipeline calculations in ₹, Architecture |
+| **Member 2 — Hassan Ifaan** (`ifaanofficial`) | Public Home, Find Creators Marketplace, Creator Directory, Niche filters |
+| **Member 3 — Annaraj** (`annaraj`) | Public Brand Requests Bulletin, RequestCard actions, Post Collab Modal, Design System |
 
 **Commit & PR Practices:**  
-Features developed across dedicated branches (e.g. `feature/marketplace-enhancements`), code reviewed, and merged via Pull Requests (e.g. **PR #7**) with descriptive commits (`feat: add private dashboard`, `feat: add public marketplace`, `fix: earnings calculation in ₹`).
+Features developed across dedicated branches (e.g. `feature/marketplace-enhancements`, `feature/brand-requests-workflow`), code reviewed, and merged via Pull Requests (**PR #7**, **PR #8**) with descriptive commits (`feat: add private dashboard`, `feat: add public marketplace`, `feat: enhance brand request card with category tags`).
 
 ---
 
